@@ -1,0 +1,24 @@
+{
+  "root_dir": "D:\\Codigos\\CodigosPython\\PathoShift_Challenge\\data\\kather_texture_2016_image_tiles_5000",
+  "total_images": 120,
+  "classes": {
+    "01_TUMOR": 15,
+    "02_STROMA": 15,
+    "03_COMPLEX": 15,
+    "04_LYMPHO": 15,
+    "05_DEBRIS": 15,
+    "06_MUCOSA": 15,
+    "07_ADIPOSE": 15,
+    "08_EMPTY": 15
+  },
+  "dimensions": [
+    [
+      150,
+      150
+    ]
+  ],
+  "formats": [
+    "TIFF"
+  ],
+  "corrupted": []
+}

@@ -1,0 +1,23 @@
+seed: 42
+experiment_name: baseline_svm_v1
+data:
+  root_dir: ./data/kather_texture_2016_image_tiles_5000
+  image_size: 150
+  val_fraction: 0.15
+  test_fraction: 0.15
+preprocess:
+  color_norm_method: reinhard
+  reference_image: ""
+  background_threshold: 0.85
+  blur_threshold: 100.0
+features:
+  hsv_bins: 32
+  lbp_radius: 3
+  lbp_n_points: 24
+  lbp_bins: 26
+model:
+  svm_C: 10.0
+  svm_kernel: rbf
+  svm_gamma: scale
+output_dir: ./outputs
+

@@ -1,0 +1,40 @@
+{
+  "total_amostras": 18,
+  "total_erros": 4,
+  "taxa_erro": 0.2222,
+  "indices_erros": [
+    5,
+    10,
+    14,
+    15
+  ],
+  "piores_erros": [
+    {
+      "indice": 15,
+      "rotulo_real": "05_DEBRIS",
+      "rotulo_predito": "03_COMPLEX",
+      "confianca": 0.4516
+    },
+    {
+      "indice": 14,
+      "rotulo_real": "03_COMPLEX",
+      "rotulo_predito": "05_DEBRIS",
+      "confianca": 0.4426
+    },
+    {
+      "indice": 10,
+      "rotulo_real": "05_DEBRIS",
+      "rotulo_predito": "03_COMPLEX",
+      "confianca": 0.4309
+    },
+    {
+      "indice": 5,
+      "rotulo_real": "03_COMPLEX",
+      "rotulo_predito": "05_DEBRIS",
+      "confianca": 0.4115
+    }
+  ],
+  "confianca_media_erros": 0.4342,
+  "erros_alta_confianca_acima_80pct": 0,
+  "erros_alta_confianca_acima_90pct": 0
+}
