@@ -22,6 +22,14 @@ O pipeline foi projetado para processar lâminas microscópicas e recortes (*til
   7. `07_ADIPOSE`: Tecido adiposo (células de gordura).
   8. `08_EMPTY`: Fundo da lamínula de vidro (sem tecido biológico).
 
+### 📥 Links Oficiais para Download do Dataset Completo (~258 MB)
+
+| Fonte | Tipo | Link |
+|---|---|---|
+| 🏛️ **Zenodo (Oficial)** | Download Direto (.zip) | [Kather_texture_2016_image_tiles_5000.zip](https://zenodo.org/records/53169/files/Kather_texture_2016_image_tiles_5000.zip) |
+| 📄 **Zenodo Record** | Página do Artigo / DOI | [DOI: 10.5281/zenodo.53169](https://doi.org/10.5281/zenodo.53169) |
+| 📊 **Kaggle** | Mirror Comunitário | [Kaggle — Colorectal Histology MNIST](https://www.kaggle.com/datasets/kmader/colorectal-histology-mnist) |
+
 ---
 
 ## 🏗️ 2. Arquitetura do Pipeline
@@ -60,7 +68,10 @@ PathoShift_Challenge/
 │   └── GUIA_TIME_ENTREGA1.md          # Guia didático para o grupo e apresentação
 ├── notebooks/
 │   └── 01_eda.ipynb                   # Análise exploratória interativa
-├── outputs/                           # Métricas, artefatos e modelos gerados
+├── outputs/                           # Destino de artefatos, métricas e gráficos
+├── scripts/
+│   ├── download_dataset.py            # Download e extração automática do dataset oficial
+│   └── create_sample_dataset.py       # Gerador de amostras sintéticas para testes rápidos
 ├── src/
 │   └── pathoshift/
 │       ├── cli.py                     # Linha de comando oficial
@@ -90,25 +101,47 @@ PathoShift_Challenge/
 
 ---
 
-## 🚀 4. Instalação e Execução
+## 🚀 4. Guia Rápido: Como Clonar e Executar
 
-### 4.1. Instalação
+### 4.1. Instalação do Ambiente
 ```bash
-# Clone ou acesse o repositório
-cd PathoShift_Challenge
+# Clone o repositório
+git clone https://github.com/rodrigomotta01/Triagem-Patologia-Digital.git
+cd Triagem-Patologia-Digital
 
 # Instale os pacotes necessários
 py -m pip install -r requirements.txt
 py -m pip install -e .
 ```
 
-### 4.2. Executar os Testes Automatizados
-O projeto conta com uma suíte de testes sintéticos que valida todas as etapas do pipeline sem necessitar de downloads externos:
+---
+
+### 4.2. Como Obter o Dataset Completo (Duas Opções)
+
+#### Opção A: Download Automático via Script (Recomendado)
+Execute o script embutido que baixa o arquivo `.zip` diretamente do Zenodo e extrai na pasta correta:
 ```bash
-py tests/test_pipeline.py
+py scripts/download_dataset.py
 ```
 
+#### Opção B: Download Manual
+1. Baixe o arquivo `Kather_texture_2016_image_tiles_5000.zip` (~258 MB) no [Zenodo](https://zenodo.org/records/53169/files/Kather_texture_2016_image_tiles_5000.zip) ou no [Kaggle](https://www.kaggle.com/datasets/kmader/colorectal-histology-mnist).
+2. Extraia o conteúdo de modo que as 8 pastas fiquem dentro de:
+   ```
+   data/kather_texture_2016_image_tiles_5000/
+   ├── 01_TUMOR/
+   ├── 02_STROMA/
+   ├── ...
+   └── 08_EMPTY/
+   ```
+
+*(Nota: Caso você queira apenas testar o código rapidamente sem baixar 258 MB, execute `py scripts/create_sample_dataset.py` para gerar amostras sintéticas locais).*
+
+---
+
 ### 4.3. Interface de Linha de Comando (CLI)
+
+Após ter os dados na pasta `data/kather_texture_2016_image_tiles_5000`:
 
 #### 1. Inspecionar o Sistema
 ```bash
@@ -120,7 +153,7 @@ py -m pathoshift describe
 py -m pathoshift prepare --input ./data/kather_texture_2016_image_tiles_5000 --output ./outputs
 ```
 
-#### 3. Treinar o Pipeline Completo
+#### 3. Treinar o Pipeline Completo (Treino + Validação + Teste)
 ```bash
 py -m pathoshift train --config ./configs/default.yaml
 ```
@@ -137,9 +170,17 @@ py -m pathoshift evaluate --input ./outputs/predictions.jsonl --output ./outputs
 
 ---
 
-## 🎓 5. Conceitos para a Defesa Técnica
+## 📊 5. Executar a Análise Exploratória (Notebook)
+
+Para reproduzir os gráficos cromáticos, análises de textura e controle de qualidade para o relatório:
+```bash
+jupyter lab notebooks/01_eda.ipynb
+```
+
+---
+
+## 🎓 6. Conceitos-Chave para a Defesa Técnica
 
 - **Por que Reinhard e não Macenko no baseline?** O método de Reinhard opera diretamente no espaço L\*a\*b\* através de momentos estatísticos ($\mu, \sigma$), com custo computacional mínimo e alta estabilidade numérica para lâminas com densidade variável.
 - **Por que Macro F1 é obrigatório?** Garante que o desempenho do modelo seja avaliado com o mesmo peso em todas as entidades teciduais, evitando que classes mais fáceis mascarem deficiências em diagnósticos críticos (ex: metástase tumoral).
 - **Por que a semente pseudoaleatória (seed) está fixada?** Garante estrita reprodutibilidade em todas as separações estratificadas e no algoritmo de otimização de margem do SVM.
-
