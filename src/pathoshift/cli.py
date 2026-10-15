@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import List, Dict, Any
 from tqdm import tqdm
 import numpy as np
+import joblib
 
 from pathoshift.config import ExperimentConfig
 from pathoshift.utils.reproducibility import set_seed, get_environment_info
@@ -157,6 +158,10 @@ def cmd_train(args: argparse.Namespace) -> None:
     model_path = out_dir / "svm_baseline.joblib"
     model.save(model_path)
 
+    # Salva o normalizador de cor para que o predict aplique a mesma transformação
+    normalizer_path = out_dir / "color_normalizer.joblib"
+    joblib.dump(normalizer, normalizer_path)
+
     # 6. Avaliação no conjunto de Teste
     print("[*] 6/6 Avaliando predições no conjunto de Teste...")
     with timer.measure("6_inferencia_teste"):
@@ -203,6 +208,21 @@ def cmd_predict(args: argparse.Namespace) -> None:
     model_path = args.model if args.model else "./outputs/svm_baseline.joblib"
     model = SVMBaseline().load(model_path)
 
+    # Carrega o normalizador de cor correspondente ao treino (se existir)
+    normalizer = None
+    candidates_norm = [
+        Path(model_path).parent / "color_normalizer.joblib",
+        Path("./outputs/color_normalizer.joblib"),
+    ]
+    for c_norm in candidates_norm:
+        if c_norm.exists():
+            try:
+                normalizer = joblib.load(c_norm)
+                print(f"[*] Normalizador de cor carregado de: {c_norm}")
+                break
+            except Exception:
+                pass
+
     # Carrega registros do manifesto
     records = []
     with open(manifest_path, "r", encoding="utf-8") as f:
@@ -242,6 +262,10 @@ def cmd_predict(args: argparse.Namespace) -> None:
         img_rgb = read_image_rgb(img_file)
         if img_rgb is None:
             continue
+
+        # Aplica a mesma normalização de cor do treinamento
+        if normalizer is not None:
+            img_rgb = normalizer.transform(img_rgb)
 
         feat = extract_all_features(img_rgb).reshape(1, -1)
         pred_label = str(model.predict(feat)[0])

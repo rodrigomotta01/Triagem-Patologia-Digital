@@ -1,128 +1,118 @@
 {
-  "accuracy": 0.7778,
-  "f1_macro": 0.75,
-  "f1_weighted": 0.7778,
-  "precision_macro": 0.75,
-  "recall_macro": 0.75,
+  "accuracy": 0.9173,
+  "f1_macro": 0.9179,
+  "f1_weighted": 0.9179,
+  "precision_macro": 0.9206,
+  "recall_macro": 0.9172,
   "per_class": {
     "01_TUMOR": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1_score": 1.0,
-      "support": 2
+      "precision": 0.9556,
+      "recall": 0.9149,
+      "f1_score": 0.9348,
+      "support": 94
     },
     "02_STROMA": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1_score": 1.0,
-      "support": 2
+      "precision": 0.8864,
+      "recall": 0.8387,
+      "f1_score": 0.8619,
+      "support": 93
     },
     "03_COMPLEX": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1_score": 0.0,
-      "support": 2
+      "precision": 0.7748,
+      "recall": 0.9149,
+      "f1_score": 0.839,
+      "support": 94
     },
     "04_LYMPHO": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1_score": 1.0,
-      "support": 3
+      "precision": 0.9341,
+      "recall": 0.9043,
+      "f1_score": 0.9189,
+      "support": 94
     },
     "05_DEBRIS": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1_score": 0.0,
-      "support": 2
+      "precision": 0.9318,
+      "recall": 0.8723,
+      "f1_score": 0.9011,
+      "support": 94
     },
     "06_MUCOSA": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1_score": 1.0,
-      "support": 2
+      "precision": 0.9348,
+      "recall": 0.9247,
+      "f1_score": 0.9297,
+      "support": 93
     },
     "07_ADIPOSE": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1_score": 1.0,
-      "support": 3
+      "precision": 0.9787,
+      "recall": 0.9787,
+      "f1_score": 0.9787,
+      "support": 94
     },
     "08_EMPTY": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1_score": 1.0,
-      "support": 2
+      "precision": 0.9688,
+      "recall": 0.9894,
+      "f1_score": 0.9789,
+      "support": 94
     }
   },
   "confusion_matrix": [
     [
+      86,
+      2,
+      2,
+      1,
+      0,
       2,
       0,
+      1
+    ],
+    [
       0,
+      78,
+      11,
       0,
-      0,
+      4,
       0,
       0,
       0
     ],
     [
-      0,
+      4,
+      1,
+      86,
       2,
       0,
-      0,
-      0,
-      0,
+      1,
       0,
       0
     ],
     [
       0,
+      1,
+      7,
+      85,
       0,
-      0,
-      0,
-      2,
-      0,
+      1,
       0,
       0
     ],
     [
       0,
-      0,
-      0,
+      6,
       3,
       0,
-      0,
-      0,
+      82,
+      2,
+      1,
       0
     ],
     [
       0,
       0,
       2,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    [
-      0,
-      0,
-      0,
-      0,
-      0,
-      2,
-      0,
-      0
-    ],
-    [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
       3,
+      2,
+      86,
+      0,
       0
     ],
     [
@@ -132,8 +122,18 @@
       0,
       0,
       0,
-      0,
+      92,
       2
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      93
     ]
   ],
   "classes": [
@@ -146,29 +146,29 @@
     "07_ADIPOSE",
     "08_EMPTY"
   ],
-  "roc_auc_macro": 0.9805,
+  "roc_auc_macro": 0.9937,
   "custo_execucao": {
     "etapas_segundos": {
-      "1_carregamento_dados": 0.0825,
-      "2_split_dataset": 0.0078,
-      "3_ajuste_reinhard": 0.1198,
-      "4_extracao_features_treino": 1.0214,
-      "4_extracao_features_val": 0.2116,
-      "4_extracao_features_teste": 0.2062,
-      "5_treinamento_svm": 0.008,
-      "6_inferencia_teste": 0.0013
+      "1_carregamento_dados": 4.8783,
+      "2_split_dataset": 0.0107,
+      "3_ajuste_reinhard": 0.1178,
+      "4_extracao_features_treino": 44.0885,
+      "4_extracao_features_val": 9.2405,
+      "4_extracao_features_teste": 9.541,
+      "5_treinamento_svm": 1.6253,
+      "6_inferencia_teste": 0.3137
     },
     "etapas_formatado": {
-      "1_carregamento_dados": "0.08s",
+      "1_carregamento_dados": "4.88s",
       "2_split_dataset": "0.01s",
       "3_ajuste_reinhard": "0.12s",
-      "4_extracao_features_treino": "1.02s",
-      "4_extracao_features_val": "0.21s",
-      "4_extracao_features_teste": "0.21s",
-      "5_treinamento_svm": "0.01s",
-      "6_inferencia_teste": "0.00s"
+      "4_extracao_features_treino": "44.09s",
+      "4_extracao_features_val": "9.24s",
+      "4_extracao_features_teste": "9.54s",
+      "5_treinamento_svm": "1.63s",
+      "6_inferencia_teste": "0.31s"
     },
-    "total_segundos": 1.6587,
-    "total_formatado": "1.66s"
+    "total_segundos": 69.8158,
+    "total_formatado": "69.82s"
   }
 }

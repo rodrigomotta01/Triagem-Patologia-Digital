@@ -1,139 +1,139 @@
 {
-  "accuracy": 0.25,
-  "f1_macro": 0.1525,
-  "f1_weighted": 0.1525,
-  "precision_macro": 0.1352,
-  "recall_macro": 0.25,
+  "accuracy": 0.9638,
+  "f1_macro": 0.9639,
+  "f1_weighted": 0.9639,
+  "precision_macro": 0.9644,
+  "recall_macro": 0.9638,
   "per_class": {
     "01_TUMOR": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1_score": 0.0,
-      "support": 15
+      "precision": 0.9821,
+      "recall": 0.9648,
+      "f1_score": 0.9734,
+      "support": 625
     },
     "02_STROMA": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1_score": 0.0,
-      "support": 15
+      "precision": 0.9454,
+      "recall": 0.9424,
+      "f1_score": 0.9439,
+      "support": 625
     },
     "03_COMPLEX": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1_score": 0.0,
-      "support": 15
+      "precision": 0.8956,
+      "recall": 0.9472,
+      "f1_score": 0.9207,
+      "support": 625
     },
     "04_LYMPHO": {
-      "precision": 0.1442,
-      "recall": 1.0,
-      "f1_score": 0.2521,
-      "support": 15
+      "precision": 0.9707,
+      "recall": 0.9536,
+      "f1_score": 0.9621,
+      "support": 625
     },
     "05_DEBRIS": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1_score": 0.0,
-      "support": 15
+      "precision": 0.969,
+      "recall": 0.9488,
+      "f1_score": 0.9588,
+      "support": 625
     },
     "06_MUCOSA": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1_score": 0.0,
-      "support": 15
+      "precision": 0.9839,
+      "recall": 0.9808,
+      "f1_score": 0.9824,
+      "support": 625
     },
     "07_ADIPOSE": {
-      "precision": 0.9375,
-      "recall": 1.0,
-      "f1_score": 0.9677,
-      "support": 15
+      "precision": 0.9855,
+      "recall": 0.9792,
+      "f1_score": 0.9823,
+      "support": 625
     },
     "08_EMPTY": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1_score": 0.0,
-      "support": 15
+      "precision": 0.9826,
+      "recall": 0.9936,
+      "f1_score": 0.9881,
+      "support": 625
     }
   },
   "confusion_matrix": [
     [
+      603,
+      5,
+      9,
+      2,
+      1,
+      4,
       0,
-      0,
-      0,
-      15,
-      0,
+      1
+    ],
+    [
+      1,
+      589,
+      23,
+      1,
+      11,
       0,
       0,
       0
     ],
     [
-      0,
-      0,
-      0,
-      15,
-      0,
-      0,
-      0,
-      0
-    ],
-    [
-      0,
-      0,
-      0,
-      15,
-      0,
-      0,
+      7,
+      12,
+      592,
+      11,
+      1,
+      2,
       0,
       0
     ],
     [
-      0,
-      0,
-      0,
-      15,
-      0,
-      0,
-      0,
-      0
-    ],
-    [
-      0,
-      0,
-      0,
-      15,
-      0,
-      0,
-      0,
-      0
-    ],
-    [
-      0,
-      0,
-      0,
-      15,
-      0,
-      0,
-      0,
-      0
-    ],
-    [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      15,
-      0
-    ],
-    [
-      0,
-      0,
-      0,
-      14,
-      0,
+      1,
+      1,
+      26,
+      596,
       0,
       1,
+      0,
       0
+    ],
+    [
+      1,
+      15,
+      8,
+      0,
+      593,
+      3,
+      5,
+      0
+    ],
+    [
+      1,
+      1,
+      3,
+      4,
+      2,
+      613,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      612,
+      9
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      621
     ]
   ],
   "classes": [

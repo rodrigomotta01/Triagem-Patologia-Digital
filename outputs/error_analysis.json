@@ -1,40 +1,194 @@
 {
-  "total_amostras": 18,
-  "total_erros": 4,
-  "taxa_erro": 0.2222,
+  "total_amostras": 750,
+  "total_erros": 62,
+  "taxa_erro": 0.0827,
   "indices_erros": [
-    5,
-    10,
-    14,
-    15
+    19,
+    20,
+    27,
+    46,
+    51,
+    59,
+    102,
+    104,
+    107,
+    149,
+    155,
+    164,
+    170,
+    192,
+    214,
+    238,
+    245,
+    260,
+    276,
+    293,
+    302,
+    303,
+    320,
+    323,
+    353,
+    364,
+    385,
+    386,
+    403,
+    412,
+    422,
+    436,
+    441,
+    444,
+    490,
+    497,
+    501,
+    502,
+    506,
+    507,
+    527,
+    531,
+    535,
+    558,
+    567,
+    607,
+    631,
+    637,
+    646,
+    666,
+    673,
+    678,
+    689,
+    690,
+    695,
+    700,
+    702,
+    709,
+    714,
+    723,
+    724,
+    728
   ],
   "piores_erros": [
     {
-      "indice": 15,
+      "indice": 155,
+      "rotulo_real": "05_DEBRIS",
+      "rotulo_predito": "07_ADIPOSE",
+      "confianca": 0.9865
+    },
+    {
+      "indice": 723,
+      "rotulo_real": "07_ADIPOSE",
+      "rotulo_predito": "08_EMPTY",
+      "confianca": 0.9814
+    },
+    {
+      "indice": 502,
+      "rotulo_real": "02_STROMA",
+      "rotulo_predito": "03_COMPLEX",
+      "confianca": 0.9572
+    },
+    {
+      "indice": 51,
+      "rotulo_real": "06_MUCOSA",
+      "rotulo_predito": "05_DEBRIS",
+      "confianca": 0.9494
+    },
+    {
+      "indice": 46,
+      "rotulo_real": "06_MUCOSA",
+      "rotulo_predito": "03_COMPLEX",
+      "confianca": 0.9478
+    },
+    {
+      "indice": 695,
+      "rotulo_real": "03_COMPLEX",
+      "rotulo_predito": "01_TUMOR",
+      "confianca": 0.9354
+    },
+    {
+      "indice": 700,
       "rotulo_real": "05_DEBRIS",
       "rotulo_predito": "03_COMPLEX",
-      "confianca": 0.4516
+      "confianca": 0.9327
     },
     {
-      "indice": 14,
+      "indice": 385,
       "rotulo_real": "03_COMPLEX",
-      "rotulo_predito": "05_DEBRIS",
-      "confianca": 0.4426
+      "rotulo_predito": "01_TUMOR",
+      "confianca": 0.9197
     },
     {
-      "indice": 10,
+      "indice": 238,
       "rotulo_real": "05_DEBRIS",
       "rotulo_predito": "03_COMPLEX",
-      "confianca": 0.4309
+      "confianca": 0.891
     },
     {
-      "indice": 5,
+      "indice": 353,
+      "rotulo_real": "05_DEBRIS",
+      "rotulo_predito": "02_STROMA",
+      "confianca": 0.8692
+    },
+    {
+      "indice": 507,
+      "rotulo_real": "05_DEBRIS",
+      "rotulo_predito": "02_STROMA",
+      "confianca": 0.8687
+    },
+    {
+      "indice": 214,
+      "rotulo_real": "07_ADIPOSE",
+      "rotulo_predito": "08_EMPTY",
+      "confianca": 0.8666
+    },
+    {
+      "indice": 673,
+      "rotulo_real": "05_DEBRIS",
+      "rotulo_predito": "02_STROMA",
+      "confianca": 0.8654
+    },
+    {
+      "indice": 631,
+      "rotulo_real": "06_MUCOSA",
+      "rotulo_predito": "04_LYMPHO",
+      "confianca": 0.8494
+    },
+    {
+      "indice": 702,
+      "rotulo_real": "04_LYMPHO",
+      "rotulo_predito": "03_COMPLEX",
+      "confianca": 0.8435
+    },
+    {
+      "indice": 501,
+      "rotulo_real": "02_STROMA",
+      "rotulo_predito": "03_COMPLEX",
+      "confianca": 0.8322
+    },
+    {
+      "indice": 412,
+      "rotulo_real": "01_TUMOR",
+      "rotulo_predito": "02_STROMA",
+      "confianca": 0.8217
+    },
+    {
+      "indice": 535,
+      "rotulo_real": "06_MUCOSA",
+      "rotulo_predito": "04_LYMPHO",
+      "confianca": 0.8203
+    },
+    {
+      "indice": 689,
       "rotulo_real": "03_COMPLEX",
+      "rotulo_predito": "06_MUCOSA",
+      "confianca": 0.8162
+    },
+    {
+      "indice": 728,
+      "rotulo_real": "02_STROMA",
       "rotulo_predito": "05_DEBRIS",
-      "confianca": 0.4115
+      "confianca": 0.8073
     }
   ],
-  "confianca_media_erros": 0.4342,
-  "erros_alta_confianca_acima_80pct": 0,
-  "erros_alta_confianca_acima_90pct": 0
+  "confianca_media_erros": 0.687,
+  "erros_alta_confianca_acima_80pct": 20,
+  "erros_alta_confianca_acima_90pct": 8
 }
